@@ -68,8 +68,8 @@ def main(src_path, dest_path):
     df_txt = xml_df[cols_req].apply(lambda x : ','.join(x.astype(str)),axis=1)
     
     df_txt.to_csv(dest_path, header= None, index=None,sep=' ')
-    #Note: the text file saved is error prone as it contained few augmented images with wrong names, it first occured in the intermediate csv file
-    #conversion. It is avoided by manually changing names of those images both in annotation.txt and their respective directories, post this generation of annotation file through this code.
+    #Note: the text file saved post running this is now rectified by code itself.
+    #By manually editing select xml files containing wrong image_names prior to running this script.
     print('\nSuccessfully written all xmls to txt.')
 
 if __name__=="__main__":
